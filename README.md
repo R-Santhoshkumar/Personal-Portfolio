@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 HEAD
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
@@ -40,7 +40,7 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
 # Personal-Portfolio
 This is my Personal Portfolio
 843a8241b550d60ef3d94c7782ea1c961987cca9
-=======
+
 # Personal-Portfolio
 This is my Personal Portfolio
->>>>>>> e371e7e1b1c452858a41eef6448ac11ffc3e0b24
+e371e7e1b1c452858a41eef6448ac11ffc3e0b24
