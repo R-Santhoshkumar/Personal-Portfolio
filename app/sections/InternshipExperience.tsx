@@ -68,7 +68,7 @@ const iconMapper: Record<IconTypeKey, JSX.Element> = {
 // Component
 export default function InternshipTimeline() {
   return (
-    <section id="experience" className="py-20 px-4 max-w-7xl mx-auto flex-col items-center justify-between gap-10 bg-[#0f172a]">
+    <section id="experience" className="py-20 px-4 max-w-7xl mx-auto flex-col items-center justify-between gap-10]">
       <h2 className="text-3xl md:text-3xl text-green-400 font-bold text-center mb-16">
         Experience
       </h2>

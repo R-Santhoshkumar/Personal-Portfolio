@@ -39,12 +39,12 @@ const Navbar: React.FC = () => {
   const navItems = ["About", "Experience", "Skills", "Projects", "Education"];
 
   return (
-    <nav className="fixed top-0 w-full bg-black/50 backdrop-blur-md border-b border-[#00ff9c]/30 z-50 shadow-md">
+    <nav className="fixed top-0 w-full bg-black/10 backdrop-blur-md border-b border-[#00ff9c]/30 z-50 shadow-md">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <Link
             href="#home"
-            className="text-2xl font-bold text-[#00ff9c] animate-pulse tracking-wide"
+            className="text-2xl font-bold text-[#00ff9c] tracking-wide"
           >
             Santhoshkumar R
           </Link>
