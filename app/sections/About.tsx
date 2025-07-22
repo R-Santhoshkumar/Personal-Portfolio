@@ -55,7 +55,7 @@ export default function About() {
       >
         <div className="rounded-xl overflow-hidden shadow-lg w-64 md:w-80 lg:w-96 text-green-400 font-mono border border-white/10 bg-white/5">
           <img
-            src="/santhoshkumar_profile.png"
+            src="/santhoshkumar.png"
             alt="Santhosh Kumar"
             className="w-full h-auto object-contain"
           />

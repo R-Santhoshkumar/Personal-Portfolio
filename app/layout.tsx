@@ -1,3 +1,4 @@
+// app/layout.tsx or app/layout.js
 import "./globals.css";
 import { Inter } from "next/font/google";
 import Navbar from "../components/Navbar";
@@ -9,6 +10,9 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata = {
   title: "Santhoshkumar Portfolio",
   description: "Cybersecurity Portfolio of R. SanthoshKumar",
+  icons: {
+    icon: '/favicon.svg', // Adjust the path if your favicon is in a different location
+  },
 };
 
 export default function RootLayout({
@@ -18,7 +22,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${inter.className} bg-[#0f172a] text-white overflow-x-hidden`}>
+      <body
+        className={`${inter.className} bg-[#0f172a] text-white overflow-x-hidden`}
+      >
         <ParticlesBackground />
         <div className="relative z-10 min-h-screen flex flex-col">
           <Navbar />
