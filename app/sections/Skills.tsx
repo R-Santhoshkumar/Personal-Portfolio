@@ -89,17 +89,16 @@ export default function Skills() {
       <h2 className="text-3xl font-bold text-green-400 mb-10">Skills</h2>
 
       {/* group to detect hover and pause animation */}
-      <div className="overflow-hidden group relative">
-        <div className="flex w-max gap-6 marquee-track group-hover:pause-animation px-4 py-6">
+      {/* Remove outer group so hover only applies to individual cards */}
+      <div className="overflow-hidden relative group">
+        {/* Scrolling container */}
+        <div className="flex w-max gap-6 marquee-track group-hover:[animation-play-state:paused] px-4 py-6">
           {[...skills, ...skills].map((skill, index) => (
             <div
               key={index}
-              className="w-32 h-32 flex-shrink-0 rounded-xl border border-white/10 bg-white/5 backdrop-blur-md shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-green-500/30 hover:bg-white/10 hover:border-green-400 relative overflow-hidden group"
+              className="group w-32 h-32 flex-shrink-0 rounded-xl border border-white/10 bg-white/5 backdrop-blur-md shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-green-500/30 hover:bg-white/10 hover:border-green-400 relative overflow-hidden"
             >
-              {/* Decorative Glow Border on Hover */}
-              <div className="absolute inset-0 rounded-xl pointer-events-none transition-all duration-300 group-hover:ring-1 group-hover:ring-green-400"></div>
-
-              {/* Card Content */}
+              <div className="absolute inset-0 rounded-xl pointer-events-none transition-all duration-300 group-hover:ring-1 group-hover:ring-green-400" />
               <div className="flex flex-col items-center justify-center h-full p-4 z-10 relative">
                 <div className="w-14 h-14 flex items-center justify-center rounded-md overflow-hidden p-1">
                   <img
@@ -119,7 +118,8 @@ export default function Skills() {
 
       <style jsx>{`
         .marquee-track {
-          animation: scrollLeft 50s linear infinite;
+          animation: scroll 30s linear infinite;
+          will-change: transform;
         }
 
         .group:hover .marquee-track {

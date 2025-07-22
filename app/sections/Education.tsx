@@ -33,7 +33,7 @@ export default function EducationTimeline() {
 
       <div className="relative max-w-6xl mx-auto">
         {/* Vertical Timeline Line */}
-        <div className="absolute left-1/2 top-0 h-full w-1 bg-white/10 transform -translate-x-1/2 z-0" />
+        <div className="absolute left-1/2 top-0 h-full w-1 bg-[#00ff9c]/70 transform -translate-x-1/2 z-0" />
 
         {/* Timeline Cards */}
         <div className="space-y-20 relative z-10">

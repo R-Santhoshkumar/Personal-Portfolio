@@ -1,10 +1,31 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 
 export default function Projects() {
+
+  const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  const handleClickOutside = (event: MouseEvent) => {
+    if (
+      containerRef.current &&
+      !containerRef.current.contains(event.target as Node)
+    ) {
+      setExpandedIndex(null);
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+
+
   const projects = [
     {
       title: "Vulnerability Assessment and Penetration Testing (VAPT) Project",
@@ -82,7 +103,6 @@ export default function Projects() {
     },
   ];
 
-  const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
 
   return (
     <section
@@ -93,7 +113,7 @@ export default function Projects() {
         Projects
       </h2>
 
-      <div className="grid gap-10 md:grid-rows w-full">
+      <div ref={containerRef} className="grid gap-10 md:grid-rows w-full">
         {projects.map(({ title, desc, tech }, index) => {
           const isExpanded = expandedIndex === index;
 
@@ -102,7 +122,10 @@ export default function Projects() {
               key={title}
               whileHover={{ scale: 1.02 }}
               transition={{ duration: 0.3 }}
-              className="relative rounded-xl w-full border border-white/10 bg-white/5 backdrop-blur-md p-6 shadow-xl hover:shadow-green-500/30 transition-all flex flex-row"
+              onClick={() =>
+                setExpandedIndex(isExpanded ? null : index)
+              }
+              className="relative rounded-xl w-full border border-white/10 bg-white/5 backdrop-blur-md p-6 shadow-xl hover:shadow-green-500/30 transition-all flex flex-row cursor-pointer"
             >
               <div className="flex w-full flex-col">
                 <h3 className="text-2xl font-bold text-green-300 mb-2">
@@ -120,11 +143,6 @@ export default function Projects() {
                   ))}
                 </div>
 
-                {/* Short or Full Description */}
-                {!isExpanded && (
-                  <p className="text-gray-300 text-sm line-clamp-2"></p>
-                )}
-
                 <AnimatePresence>
                   {isExpanded && (
                     <motion.div
@@ -138,15 +156,6 @@ export default function Projects() {
                     </motion.div>
                   )}
                 </AnimatePresence>
-              </div>
-              {/* Chevron at Bottom Center-Right */}
-              <div className="flex justify-end mt-4">
-                <button
-                  onClick={() => setExpandedIndex(isExpanded ? null : index)}
-                  className="text-green-400 text-lg hover:scale-110 transition"
-                >
-                  {isExpanded ? <FaChevronUp /> : <FaChevronDown />}
-                </button>
               </div>
             </motion.div>
           );
