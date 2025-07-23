@@ -1,46 +1,121 @@
+# 🔧 Cybersecurity Portfolio of R. Santhoshkumar
 
-HEAD
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+Welcome to the personal cybersecurity portfolio of **R. Santhoshkumar**. This project is a showcase of my skills, experience, certifications, and projects in the fields of cybersecurity, cloud security, digital forensics, and web development.
 
-## Getting Started
+---
 
-First, run the development server:
+## 🌐 Live Site
+
+[Portfolio Website](https://r-santhoshkumar.vercel.app/)
+
+---
+
+## 📊 Tech Stack
+
+### Frontend
+
+* **Next.js 13+** with App Router
+* **Tailwind CSS** for styling
+* **Framer Motion** for smooth animations
+* **TypeScript**
+
+### Hosting & Deployment
+
+* **Vercel**
+* **GitHub** (for source control)
+
+---
+
+## 📅 Sections Included
+
+1. **Hero Section** – Intro with animated heading and call-to-action buttons.
+2. **About Me** – Overview of my interests and goals in cybersecurity.
+3. **Internship Experience** – Detailed descriptions of hands-on internship work.
+4. **Skills** – Technologies/tools I use, presented with auto-scrolling and hover pause.
+5. **Projects** – Expandable cards for individual projects with detailed write-ups.
+6. **Education** – My academic background and relevant courses.
+7. **Contact** – Section for connecting and collaboration.
+
+---
+
+## 💡 Features
+
+* Fully **responsive** UI for desktop, tablet, and mobile
+* **Animated scroll** and transitions using Framer Motion
+* **Dark theme** with modern UI design
+* **Marquee-style auto-scroll** on skills
+* Expandable/collapsible project descriptions
+
+---
+
+## 🔍 How to Run Locally
+
+1. **Clone the Repository:**
+
+```bash
+git clone https://github.com/your-username/your-repo-name.git
+cd your-repo-name
+```
+
+2. **Install Dependencies:**
+
+```bash
+npm install
+```
+
+3. **Run the Development Server:**
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Visit `http://localhost:3000` in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 📄 Folder Structure
 
-## Learn More
+```
+app/
+  sections/     # Hero, About, Skills, Projects, etc.
+  page.tsx      # Main homepage layout
+components/
+  Navbar.tsx
+  Footer.tsx
+  ParticlesBackground.tsx
+public/
+  icons/        # Tool logos
+  profile.png   # Personal image
+```
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🌟 Credits
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+* **Icons & Logos**: Flaticon, WorldVectorLogo
+* **Fonts**: Google Fonts (Roboto, Inter, Poppins)
+* **Libraries**: TailwindCSS, Framer Motion
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## ✨ Author
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+**R. Santhoshkumar**
+Cybersecurity Enthusiast | Cloud Security | Developer
 
-# Personal-Portfolio
-This is my Personal Portfolio
-843a8241b550d60ef3d94c7782ea1c961987cca9
+Feel free to reach out via the [Contact](#contact) section of the website.
 
-# Personal-Portfolio
-This is my Personal Portfolio
-e371e7e1b1c452858a41eef6448ac11ffc3e0b24
+---
+
+## 🚀 Future Improvements
+
+* Add blog support using MDX
+* Add light/dark toggle
+* Improve accessibility and SEO
+* Integrate real-time contact form with email backend
+
+---
+
+## 📦 License
+
+This project is licensed under the **MIT License**.
