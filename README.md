@@ -53,8 +53,8 @@ Welcome to the personal cybersecurity portfolio of **R. Santhoshkumar**. This pr
 1. **Clone the Repository:**
 
 ```bash
-git clone https://github.com/your-username/your-repo-name.git
-cd your-repo-name
+git clone https://github.com/R-Santhoshkumar/Personal-Portfolio.git
+cd Personal-Portfolio
 ```
 
 2. **Install Dependencies:**
