@@ -39,14 +39,14 @@ const internships: Internship[] = [
     description:
       'Completed a course-cum-internship in Cybersecurity at KGiSL Micro College with a focus on Cisco Networking, Red Hat Linux, and AWS. Gained hands-on experience in network security, cloud computing, and Linux system administration, building practical skills for real-world cybersecurity challenges.',
   },
-  {
+  /*{
     title: 'Technical Intern',
     company: 'Bharathidasan University, Tiruchirappalli',
     duration: 'Jan 2024 - Mar 2024',
     iconType: 'tech',
     description:
       'Completed a technical internship focused on core networking concepts and system troubleshooting. Gained hands-on experience in diagnosing and resolving hardware and software issues while strengthening understanding of network configurations and maintenance.',
-  },
+  },*/
   {
     title: 'Web Security Intern',
     company: 'Indian Institute of Information Technology, Kottayam',
