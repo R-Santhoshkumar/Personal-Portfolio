@@ -16,7 +16,7 @@ export default function Hero() {
         animate={{ x: 0, opacity: 1 }}
         transition={{ duration: 0.8, ease: "easeInOut" }}
       >
-        <h1 className="text-2xl sm:text-3xl md:text-5xl font-extrabold leading-tight text-transparent bg-clip-text bg-gradient-to-r from-green-400 via-emerald-300 to-cyan-400 drop-shadow-[0_2px_2px_rgba(0,255,156,0.4)]">
+        <h1 className="text-2xl sm:text-3xl md:text-5xl font-extrabold leading-tight text-transparent bg-clip-text drop-shadow-[0_2px_2px_rgba(0,255,156,0.4)]">
           👋 Hello, I'm SANTHOSHKUMAR R
         </h1>
 
