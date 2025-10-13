@@ -25,11 +25,27 @@ interface Internship {
 const internships: Internship[] = [
   {
     title: 'Cybersecurity Intern',
-    company: 'Edu-versity',
-    duration: 'May 2024 - Jun 2024',
+    company: 'VDart',
+    duration: 'Aug 2025 - Sep 2025',
     iconType: 'security',
     description:
-      'Completed an internship in cybersecurity at Edu-versity Company, covering network security, ethical hacking, threat analysis, and security protocols. Gained hands-on experience with cybersecurity tools and techniques to strengthen skills in securing information systems and mitigating threats.',
+      'I successfully completed my internship at Vdart, where I gained extensive exposure to the field of Governance, Risk, and Compliance (GRC) and cybersecurity operations. Throughout the internship, I actively worked on understanding and applying various cybersecurity concepts, including security audits, Vulnerability Assessment and Penetration Testing (VAPT), and risk management processes such as risk assessment, risk registers, and risk compliance. I also developed a solid foundation in Linux administration, networking fundamentals, and Cisco networking, while learning about firewall configurations, DNS records, and identity and access management (IAM). Additionally, I gained hands-on experience in drafting ISO policies, Standard Operating Procedures (SOPs), and other essential security documents. This internship provided me with valuable practical knowledge of real-world cybersecurity practices, enhancing my technical proficiency, analytical thinking, and understanding of how organizations manage and secure their information systems.',
+  },
+  {
+    title: 'Web Security Intern',
+    company: 'Indian Institute of Information Technology, Kottayam',
+    duration: 'May 2025 - Jul 2025',
+    iconType: 'web',
+    description:
+      'Completed a web security-focused internship at IIITK, gaining hands-on experience in identifying and mitigating vulnerabilities such as SQL injection, XSS, and command injection. Worked with tools like Burp Suite, SQLMap, and OWASP ZAP to analyze and secure web applications.',
+  },
+  {
+    title: 'Technical Intern',
+    company: 'Bharathidasan University, Tiruchirappalli',
+    duration: 'Jan 2025 - Mar 2025',
+    iconType: 'tech',
+    description:
+      'Completed a technical internship focused on core networking concepts and system troubleshooting. Gained hands-on experience in diagnosing and resolving hardware and software issues while strengthening understanding of network configurations and maintenance.',
   },
   {
     title: 'Cybersecurity Intern',
@@ -40,21 +56,16 @@ const internships: Internship[] = [
       'Completed a course-cum-internship in Cybersecurity at KGiSL Micro College with a focus on Cisco Networking, Red Hat Linux, and AWS. Gained hands-on experience in network security, cloud computing, and Linux system administration, building practical skills for real-world cybersecurity challenges.',
   },
   {
-    title: 'Technical Intern',
-    company: 'Bharathidasan University, Tiruchirappalli',
-    duration: 'Jan 2024 - Mar 2024',
-    iconType: 'tech',
+    title: 'Cybersecurity Intern',
+    company: 'Edu-versity',
+    duration: 'May 2024 - Jun 2024',
+    iconType: 'security',
     description:
-      'Completed a technical internship focused on core networking concepts and system troubleshooting. Gained hands-on experience in diagnosing and resolving hardware and software issues while strengthening understanding of network configurations and maintenance.',
+      'Completed an internship in cybersecurity at Edu-versity Company, covering network security, ethical hacking, threat analysis, and security protocols. Gained hands-on experience with cybersecurity tools and techniques to strengthen skills in securing information systems and mitigating threats.',
   },
-  {
-    title: 'Web Security Intern',
-    company: 'Indian Institute of Information Technology, Kottayam',
-    duration: 'May 2024 - Jul 2024',
-    iconType: 'web',
-    description:
-      'Completed a web security-focused internship at IIITK, gaining hands-on experience in identifying and mitigating vulnerabilities such as SQL injection, XSS, and command injection. Worked with tools like Burp Suite, SQLMap, and OWASP ZAP to analyze and secure web applications.',
-  },
+  
+  
+  
 ];
 
 // Icon mapping
