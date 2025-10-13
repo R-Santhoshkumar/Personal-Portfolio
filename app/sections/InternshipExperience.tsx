@@ -29,7 +29,7 @@ const internships: Internship[] = [
     duration: 'Aug 2025 - Sep 2025',
     iconType: 'security',
     description:
-      'I successfully completed my internship at Vdart, where I gained extensive exposure to the field of Governance, Risk, and Compliance (GRC) and cybersecurity operations. Throughout the internship, I actively worked on understanding and applying various cybersecurity concepts, including security audits, Vulnerability Assessment and Penetration Testing (VAPT), and risk management processes such as risk assessment, risk registers, and risk compliance. I also developed a solid foundation in Linux administration, networking fundamentals, and Cisco networking, while learning about firewall configurations, DNS records, and identity and access management (IAM). Additionally, I gained hands-on experience in drafting ISO policies, Standard Operating Procedures (SOPs), and other essential security documents. This internship provided me with valuable practical knowledge of real-world cybersecurity practices, enhancing my technical proficiency, analytical thinking, and understanding of how organizations manage and secure their information systems.',
+      'I completed my internship at Vdart Academy from August 4th to September 26th, where I gained practical knowledge in Governance, Risk, and Compliance (GRC) and cybersecurity. During this period, I learned about security audits, VAPT, risk assessment, Linux, networking, firewalls, ISO policies, and SOPs. The internship helped me understand how cybersecurity, cryptography, and compliance work together to protect and manage organizational information systems effectively.',
   },
   {
     title: 'Web Security Intern',
