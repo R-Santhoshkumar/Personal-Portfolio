@@ -16,7 +16,7 @@ const education = [
     details: "Specialized in Mathematics, Physics, and Chemistry, building a strong base in logical reasoning and technical concepts, which paved the way for pursuing a career in engineering.",
   },
   {
-    title: "M.Tech (6yr Integrated) Computer Science, Engineering and Technology",
+    title: "M.Tech (6yr Integrated) Computer Science and Engineering",
     institution: "Bharathidasan University",
     year: "2020 - 2026 (Present)",
     details:
