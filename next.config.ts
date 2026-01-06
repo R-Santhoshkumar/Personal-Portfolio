@@ -2,10 +2,7 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   devIndicators: {
-    position: "bottom-right", // optional
-  },
-  eslint: {
-    ignoreDuringBuilds: true,
+    position: "bottom-right",
   },
 };
 
