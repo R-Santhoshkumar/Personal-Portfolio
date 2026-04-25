@@ -1,121 +1,56 @@
-# 🔧 Cybersecurity Portfolio of R. Santhoshkumar
+# Santhoshkumar R - Modern Cybersecurity Portfolio
 
-Welcome to the personal cybersecurity portfolio of **R. Santhoshkumar**. This project is a showcase of my skills, experience, certifications, and projects in the fields of cybersecurity, cloud security, digital forensics, and web development.
+A high-performance, immersive portfolio designed for **Santhoshkumar R**. This project showcases a blend of modern web development and a cybersecurity-centric aesthetic, featuring 3D elements, glassmorphism, and dynamic animations.
 
----
+## 🚀 Key Features
 
-## 🌐 Live Site
+- **Immersive 3D Hero Section:** Built with `@react-three/fiber` and `@react-three/drei`, featuring a custom-coded **Cyber Shield** with hexagonal energy plates and vertical security pillars.
+- **Dynamic SOC Terminal:** A stylized, glassmorphism-based CLI window simulating a real-time SOC environment with incident alerts and automated task tracking.
+- **Bento Grid Projects Showcase:** A modern, responsive grid layout for projects with hover-triggered glows and category-specific security icons.
+- **Animated Experience Timeline:** A scroll-linked journey track that dynamically fills as the user explores the professional history.
+- **Glassmorphism UI:** Consistent application of glassmorphism across the Navbar, Cards, and Footer for a "Cyber-Dark" aesthetic.
+- **Interactive Tech Stack:** Categorized skills with a clean, grid-based presentation and grayscale-to-color transitions.
+- **Fully Responsive:** Optimized for all device types, from mobile to ultra-wide displays.
 
-[Portfolio Website](https://r-santhoshkumar.vercel.app/)
+## 🛠️ Tech Stack
 
----
+- **Framework:** [Next.js 15+](https://nextjs.org/) (App Router)
+- **Styling:** [Tailwind CSS 4](https://tailwindcss.com/)
+- **Animations:** [Framer Motion](https://www.framer.com/motion/)
+- **3D Rendering:** [React Three Fiber](https://docs.pmnd.rs/react-three-fiber/) / [Three.js](https://threejs.org/)
+- **Background:** [TsParticles](https://particles.js.org/)
+- **Icons:** [React Icons](https://react-icons.github.io/react-icons/)
+- **Language:** [TypeScript](https://www.typescriptlang.org/)
 
-## 📊 Tech Stack
+## 📦 Getting Started
 
-### Frontend
+### Prerequisites
 
-* **Next.js 13+** with App Router
-* **Tailwind CSS** for styling
-* **Framer Motion** for smooth animations
-* **TypeScript**
+- Node.js (v20 or higher)
+- npm or yarn
 
-### Hosting & Deployment
+### Installation
 
-* **Vercel**
-* **GitHub** (for source control)
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/R-Santhoshkumar/Personal-Portfolio.git
+   ```
 
----
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
 
-## 📅 Sections Included
+3. Run the development server:
+   ```bash
+   npm run dev
+   ```
 
-1. **Hero Section** – Intro with animated heading and call-to-action buttons.
-2. **About Me** – Overview of my interests and goals in cybersecurity.
-3. **Internship Experience** – Detailed descriptions of hands-on internship work.
-4. **Skills** – Technologies/tools I use, presented with auto-scrolling and hover pause.
-5. **Projects** – Expandable cards for individual projects with detailed write-ups.
-6. **Education** – My academic background and relevant courses.
-7. **Contact** – Section for connecting and collaboration.
+4. Open [http://localhost:3000](http://localhost:3000) in your browser to see the results.
 
----
+## 📝 License
 
-## 💡 Features
-
-* Fully **responsive** UI for desktop, tablet, and mobile
-* **Animated scroll** and transitions using Framer Motion
-* **Dark theme** with modern UI design
-* **Marquee-style auto-scroll** on skills
-* Expandable/collapsible project descriptions
-
----
-
-## 🔍 How to Run Locally
-
-1. **Clone the Repository:**
-
-```bash
-git clone https://github.com/R-Santhoshkumar/Personal-Portfolio.git
-cd Personal-Portfolio
-```
-
-2. **Install Dependencies:**
-
-```bash
-npm install
-```
-
-3. **Run the Development Server:**
-
-```bash
-npm run dev
-```
-
-Visit `http://localhost:3000` in your browser.
+This project is open-source and available under the [MIT License](LICENSE).
 
 ---
-
-## 📄 Folder Structure
-
-```
-app/
-  sections/     # Hero, About, Skills, Projects, etc.
-  page.tsx      # Main homepage layout
-components/
-  Navbar.tsx
-  Footer.tsx
-  ParticlesBackground.tsx
-public/
-  icons/        # Tool logos
-  profile.png   # Personal image
-```
-
----
-
-## 🌟 Credits
-
-* **Icons & Logos**: Flaticon, WorldVectorLogo
-* **Fonts**: Google Fonts (Roboto, Inter, Poppins)
-* **Libraries**: TailwindCSS, Framer Motion
-
----
-
-## ✨ Author
-
-**R. Santhoshkumar**
-Cybersecurity Enthusiast | Cloud Security | Developer
-
-Feel free to reach out via the [Contact](#contact) section of the website.
-
----
-
-## 🚀 Future Improvements
-
-* Add blog support using MDX
-* Add light/dark toggle
-* Improve accessibility and SEO
-* Integrate real-time contact form with email backend
-
----
-
-## 📦 License
-
-This project is licensed under the **MIT License**.
+Developed by **Santhoshkumar R**.

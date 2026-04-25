@@ -1,165 +1,123 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { FaChevronDown, FaChevronUp } from "react-icons/fa";
+import { motion } from "framer-motion";
+import { FaExternalLinkAlt, FaGithub, FaShieldAlt, FaNetworkWired, FaCloud, FaSearch } from "react-icons/fa";
+
+const projects = [
+  {
+    title: "VAPT Project",
+    category: "Offensive Security",
+    icon: <FaShieldAlt className="text-red-400" />,
+    desc: "Full-scale VAPT project using Kali Linux, SEToolkit, and Nessus. Simulated phishing and MitM attacks, followed by host hardening via GPO.",
+    tech: ["Kali Linux", "Nessus", "SEToolkit", "VAPT"],
+    color: "from-red-500/20 to-orange-500/20",
+    size: "md:col-span-2"
+  },
+  {
+    title: "Enterprise Network",
+    category: "Networking",
+    icon: <FaNetworkWired className="text-blue-400" />,
+    desc: "Multi-location network design with OSPF, ACLs, and PAT using Cisco Packet Tracer.",
+    tech: ["Cisco Packet Tracer", "OSPF", "ACLs"],
+    color: "from-blue-500/20 to-cyan-500/20",
+    size: "md:col-span-1"
+  },
+  {
+    title: "Azure Bastion & Peering",
+    category: "Cloud Security",
+    icon: <FaCloud className="text-cyber-green" />,
+    desc: "Secure VNet peering with Azure Bastion for private VM management.",
+    tech: ["Azure", "Bastion", "VNet"],
+    color: "from-cyber-green/20 to-emerald-500/20",
+    size: "md:col-span-1"
+  },
+  {
+    title: "Digital Forensics",
+    category: "Investigation",
+    icon: <FaSearch className="text-purple-400" />,
+    desc: "Deep-dive investigation using Autopsy 4.21.0. Recovered deleted files and analyzed registry timelines.",
+    tech: ["Autopsy", "Forensics", "NTFS"],
+    color: "from-purple-500/20 to-pink-500/20",
+    size: "md:col-span-2"
+  },
+  {
+    title: "High Availability Web",
+    category: "Cloud Infrastructure",
+    icon: <FaCloud className="text-orange-400" />,
+    desc: "Load-balanced web infrastructure on Azure with failover mechanisms.",
+    tech: ["Load Balancer", "Azure", "NSGs"],
+    color: "from-orange-500/20 to-yellow-500/20",
+    size: "md:col-span-2"
+  },
+  {
+    title: "Secure Subnet Design",
+    category: "Cloud Security",
+    icon: <FaShieldAlt className="text-cyber-blue" />,
+    desc: "Segmented public/private subnets with strict NSG rules for isolation.",
+    tech: ["Azure", "NSGs", "Linux"],
+    color: "from-cyber-blue/20 to-indigo-500/20",
+    size: "md:col-span-1"
+  }
+];
 
 export default function Projects() {
-
-  const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
-  const containerRef = useRef<HTMLDivElement>(null);
-
-  const handleClickOutside = (event: MouseEvent) => {
-    if (
-      containerRef.current &&
-      !containerRef.current.contains(event.target as Node)
-    ) {
-      setExpandedIndex(null);
-    }
-  };
-
-  useEffect(() => {
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, []);
-
-
-  const projects = [
-    {
-      title: "Vulnerability Assessment and Penetration Testing (VAPT) Project",
-      desc: `Planned and executed a full-scale VAPT project to identify and mitigate security vulnerabilities at both the system and application levels. Deployed Kali Linux in a virtual environment and used SEToolkit to simulate a Credential Harvester Attack via phishing. Simulated Man-in-the-Middle attacks to demonstrate real-world credential theft and session hijacking. Nessus was used for network vulnerability scanning, revealing issues such as unsigned SMB traffic, open ports, and outdated services.
-
-      Mitigation involved applying security patches, enforcing secure protocols, reconfiguring settings, and hardening host machines via Windows Group Policy. Post-remediation scans validated the fixes. This project provided hands-on experience with offensive and defensive techniques, social engineering, and the full vulnerability management lifecycle, supported by a detailed step-by-step documentation of findings and remediations.`,
-      tech: [
-        "Kali Linux",
-        "SEToolkit",
-        "Tenable Nessus",
-        "Windows GPO",
-        "Phishing",
-        "VAPT",
-      ],
-    },
-    {
-      title: "Advanced Networking Project using Cisco Packet Tracer",
-      desc: `I designed and implemented a multi-location enterprise network using Cisco Packet Tracer, connecting offices in Coimbatore, Chennai, Bangalore, and Delhi. The setup included proper subnetting, IP addressing, and OSPF routing to ensure smooth inter-network communication. Routers and switches were configured with hostnames, banners, and descriptions. Remote access was secured using SSH and Telnet, while DHCP was used for dynamic IP allocation in Coimbatore and Bangalore, and static IPs were assigned in Chennai and Delhi.
-
-      To enhance security and control, I implemented Access Control Lists (ACLs) to restrict communication between specific hosts and networks. Port Address Translation (PAT) was configured to manage internet access via the ISP in Coimbatore. The entire network was tested for connectivity, and configurations were saved to NVRAM for persistence. This project enhanced my skills in network design, protocol configuration, and security implementation, reinforcing my interest in network engineering and cybersecurity.`,
-      tech: ["Cisco Packet Tracer Tool"],
-    },
-    {
-      title: "Azure VNet Peering & Bastion Host Implementation",
-      desc: `This project involved setting up secure and scalable communication between two Azure Virtual Networks using VNet Peering. VNet1 and VNet2 were configured with public subnets hosting virtual machines, allowing for private, low-latency connectivity between them without exposing public IPs.
-
-      To enhance security, Azure Bastion was deployed to provide remote access to VMs directly through the Azure portal, eliminating the need for public-facing endpoints. This project deepened my understanding of secure cloud networking, inter-VNet communication, and best practices for remote access in cloud environments.`,
-      tech: [
-        "Azure VNet",
-        "VNet Peering",
-        "Azure Bastion",
-        "NSGs",
-        "Virtual Machines",
-      ],
-    },
-    {
-      title: "Comprehensive Digital Forensics Case Analysis",
-      desc: `Conducted a detailed forensic investigation using Autopsy 4.21.0 to examine digital evidence and validate its integrity. The process included loading and verifying forensic images, adjusting time zones for accurate analysis, and recovering files from NTFS, FAT16/32, and unallocated spaces. Signature analysis, hash computation, and entropy checks were performed to detect anomalies and verify data consistency.
-
-      Further investigation involved reconstructing browsing history, emails, and chat logs, along with profiling the system through registry and timeline reports. Encryption and steganalysis techniques were applied to identify hidden data, ensuring evidence remained untampered. This project sharpened my skills in digital forensics, data recovery, and secure evidence handling using advanced investigative methodologies.`,
-      tech: [
-        "Autopsy 4.21.0",
-        "Digital Forensics Tools",
-        "Encryption Analysis",
-        "File Recovery",
-        "Steganalysis",
-      ],
-    },
-    {
-      title: "High Availability Web Infrastructure using Azure Load Balancer",
-      desc: `This project involved deploying a scalable and fault-tolerant web infrastructure on Azure using an Internet-facing Load Balancer. A virtual network with public subnets was created to host two virtual machines, each running a web server with unique content. Azure Bastion was configured for secure VM access without public IP exposure, and Network Security Groups were applied to control traffic flow.
-
-      Both VMs were attached to the Load Balancer backend pool with health probes and rules set to manage traffic distribution. The setup ensured high availability by redirecting traffic to the healthy server when one VM was stopped. This project deepened my understanding of load balancing, cloud-based failover mechanisms, and building resilient web applications in Azure.`,
-      tech: [
-        "Azure Load Balancer",
-        "Azure Virtual Network",
-        "Virtual Machines",
-        "Bastion Host",
-        "NSGs",
-      ],
-    },
-    {
-      title: "Secure Azure Network Design with Public and Private Subnets",
-      desc: `This project involved designing a secure Azure Virtual Network (VNet) by creating segmented public and private subnets. A Linux VM was deployed in the public subnet to serve as a web server accessible from the internet, while another VM was placed in the private subnet to remain isolated from external access. Network Security Groups were configured to control and restrict communication between the two environments.
-
-      Connectivity was tested using ping and SSH to ensure secure internal communication while maintaining external isolation of the backend VM. This setup provided hands-on experience in subnet-level security, resource segmentation, and designing enterprise-ready cloud networks within Azure.`,
-      tech: [
-        "Azure Virtual Network",
-        "Virtual Machines",
-        "NSGs",
-        "Subnets",
-        "Linux",
-        "SSH",
-      ],
-    },
-  ];
-
-
   return (
-    <section
-      id="projects"
-      className="py-20 px-4 max-w-7xl mx-auto flex flex-col gap-10"
-    >
-      <h2 className="text-3xl font-bold text-center mb-12 text-green-400">
-        Projects
-      </h2>
+    <section id="projects" className="py-24 px-4 max-w-7xl mx-auto">
+      <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
+        <div className="space-y-2">
+          <h2 className="text-cyber-green font-mono text-sm tracking-widest uppercase">My Portfolio</h2>
+          <h3 className="text-4xl font-bold">Featured <span className="text-slate-500">Projects</span></h3>
+        </div>
+        <p className="text-slate-400 max-w-md text-sm md:text-base">
+          A collection of projects ranging from offensive security simulations to 
+          scalable cloud architecture and digital forensics.
+        </p>
+      </div>
 
-      <div ref={containerRef} className="grid gap-10 md:grid-rows w-full">
-        {projects.map(({ title, desc, tech }, index) => {
-          const isExpanded = expandedIndex === index;
-
-          return (
-            <motion.div
-              key={title}
-              whileHover={{ scale: 1.02 }}
-              transition={{ duration: 0.3 }}
-              onClick={() =>
-                setExpandedIndex(isExpanded ? null : index)
-              }
-              className="relative rounded-xl w-full border border-white/10 bg-white/5 backdrop-blur-md p-6 shadow-xl hover:shadow-green-500/30 transition-all flex flex-row cursor-pointer"
-            >
-              <div className="flex w-full flex-col">
-                <h3 className="text-2xl font-bold text-green-300 mb-2">
-                  {title}
-                </h3>
-
-                <div className="flex flex-wrap gap-2 mb-3">
-                  {tech.map((t) => (
-                    <span
-                      key={t}
-                      className="bg-green-900/30 text-green-300 px-3 py-1 text-xs rounded-full"
-                    >
-                      {t}
-                    </span>
-                  ))}
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {projects.map((project, index) => (
+          <motion.div
+            key={project.title}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: index * 0.1 }}
+            className={`group relative p-8 rounded-3xl border border-white/5 glass-morphism overflow-hidden ${project.size}`}
+          >
+            {/* Background Glow */}
+            <div className={`absolute inset-0 bg-gradient-to-br ${project.color} opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
+            
+            <div className="relative z-10 flex flex-col h-full">
+              <div className="flex items-start justify-between mb-6">
+                <div className="p-3 bg-white/5 rounded-2xl border border-white/10 text-2xl">
+                  {project.icon}
                 </div>
-
-                <AnimatePresence>
-                  {isExpanded && (
-                    <motion.div
-                      initial={{ opacity: 0, height: 0 }}
-                      animate={{ opacity: 1, height: "auto" }}
-                      exit={{ opacity: 0, height: 0 }}
-                      transition={{ duration: 0.3 }}
-                      className="text-gray-300 text-sm mt-2 whitespace-pre-line"
-                    >
-                      {desc}
-                    </motion.div>
-                  )}
-                </AnimatePresence>
+                <div className="flex gap-3 text-slate-500">
+                  <a href="#" className="hover:text-white transition-colors"><FaGithub size={20} /></a>
+                  <a href="#" className="hover:text-white transition-colors"><FaExternalLinkAlt size={18} /></a>
+                </div>
               </div>
-            </motion.div>
-          );
-        })}
+
+              <span className="text-xs font-mono text-cyber-green mb-2 uppercase tracking-wider">
+                {project.category}
+              </span>
+              <h4 className="text-2xl font-bold mb-3 group-hover:text-cyber-green transition-colors">
+                {project.title}
+              </h4>
+              <p className="text-slate-400 text-sm leading-relaxed mb-6 flex-grow">
+                {project.desc}
+              </p>
+
+              <div className="flex flex-wrap gap-2">
+                {project.tech.map(t => (
+                  <span key={t} className="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-[10px] font-medium text-slate-300">
+                    {t}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </motion.div>
+        ))}
       </div>
     </section>
   );

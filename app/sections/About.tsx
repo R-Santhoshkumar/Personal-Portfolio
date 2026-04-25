@@ -1,66 +1,68 @@
-// app/sections/About.tsx
 "use client";
+
 import { motion } from "framer-motion";
 
 export default function About() {
   return (
-    <section
-      id="about"
-      className="py-20 px-4 max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-10"
-    >
-      {/* Left Side: Intro */}
-      <motion.div
-        initial={{ x: -50, opacity: 0 }}
-        whileInView={{ x: 0, opacity: 1 }}
-        transition={{ duration: 0.8 }}
-        viewport={{ once: true }}
-        className="md:w-1/2 text-left"
-      >
-        <h2 className="text-3xl font-bold text-green-400 mb-6">About Me</h2>
-        <p className="text-slate-300 text-base text-lg leading-relaxed">
-          Hello! I’m <strong>R. Santhoshkumar</strong>, a passionate and
-          self-motivated cybersecurity enthusiast driven by a deep interest in
-          building secure, efficient systems. My core focus lies in{" "}
-          <strong>Cybersecurity</strong>, with particular attention to areas
-          such as <strong>Cloud Security</strong>,{" "}
-          <strong>Digital Forensics</strong>, and{" "}
-          <strong>Offensive Security</strong>.
-          <br />
-          <br />
-          I’ve worked independently on various security-focused projects and am
-          continually expanding my knowledge in areas like{" "}
-          <strong>Linux environments</strong>, <strong>networking</strong>, and
-          threat analysis. I take pride in exploring vulnerabilities, automating
-          defense techniques, and contributing to a safer digital space.
-          <br />
-          <br />
-          Outside the command line, I’m always experimenting with tools, writing
-          scripts, and staying updated with the latest in infosec. I’m actively
-          seeking opportunities to learn, collaborate, and contribute to
-          impactful security initiatives.
-          <br />
-          <br />
-          If you're looking to collaborate or connect on all things tech and
-          security, let’s talk!
-        </p>
-      </motion.div>
+    <section id="about" className="py-24 px-4 max-w-7xl mx-auto">
+      <div className="flex flex-col md:flex-row items-center gap-16">
+        {/* Left Side: Image */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+          className="relative group"
+        >
+          <div className="absolute -inset-4 bg-gradient-to-r from-cyber-green to-cyber-blue opacity-20 group-hover:opacity-40 blur-2xl transition-opacity duration-500 rounded-full" />
+          <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-3xl overflow-hidden border-2 border-white/10 glass shadow-2xl">
+            <img
+              src="/santhoshkumar.png"
+              alt="Santhosh Kumar"
+              className="w-full h-full object-cover transition-all duration-700"
+            />
+          </div>
+        </motion.div>
 
-      {/* Right Side: image */}
-      <motion.div
-        initial={{ x: 50, opacity: 0 }}
-        whileInView={{ x: 0, opacity: 1 }}
-        transition={{ duration: 0.8 }}
-        viewport={{ once: true }}
-        className="md:w-1/2 w-full flex justify-center"
-      >
-        <div className="rounded-xl overflow-hidden shadow-lg w-64 md:w-80 lg:w-96 text-green-400 font-mono border border-white/10 bg-white/5">
-          <img
-            src="/santhoshkumar.png"
-            alt="Santhosh Kumar"
-            className="w-full h-auto object-contain"
-          />
-        </div>
-      </motion.div>
+        {/* Right Side: Content */}
+        <motion.div
+          initial={{ opacity: 0, x: 50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+          className="flex-1 space-y-6"
+        >
+          <div className="space-y-2">
+            <h2 className="text-cyber-green font-mono text-sm tracking-widest uppercase">The Story</h2>
+            <h3 className="text-4xl font-bold">Bridging <span className="text-slate-500">Code & Security</span></h3>
+          </div>
+
+          <div className="space-y-4 text-slate-400 leading-relaxed text-lg">
+            <p>
+              I am <span className="text-white font-semibold">Santhoshkumar R</span>, a cybersecurity enthusiast 
+              committed to mastering the art of digital defense. My journey is fueled by a relentless curiosity 
+              for how systems work and, more importantly, how they can be protected.
+            </p>
+            <p>
+              Specializing in <span className="text-cyber-green">Offensive Security</span>, 
+              <span className="text-cyber-blue">Cloud Infrastructure</span>, and 
+              <span className="text-cyber-purple">Digital Forensics</span>, I bridge the gap between 
+              robust development and ironclad security.
+            </p>
+            
+            <div className="grid grid-cols-2 gap-4 pt-4">
+              <div className="p-4 rounded-2xl bg-white/5 border border-white/10">
+                <span className="block text-white font-bold mb-1 italic">Mindset</span>
+                <span className="text-sm text-slate-500 font-mono">Continuous Learning</span>
+              </div>
+              <div className="p-4 rounded-2xl bg-white/5 border border-white/10">
+                <span className="block text-white font-bold mb-1 italic">Mission</span>
+                <span className="text-sm text-slate-500 font-mono">Securing the Digital Frontier</span>
+              </div>
+            </div>
+          </div>
+        </motion.div>
+      </div>
     </section>
   );
 }

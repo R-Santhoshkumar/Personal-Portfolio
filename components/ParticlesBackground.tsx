@@ -18,11 +18,14 @@ export default function ParticlesBackground() {
         preset: "stars",
         background: {
           color: {
-            value: "#0f172a", // matches your base background
+            value: "#0b1120", 
           },
         },
+        fullScreen: {
+          enable: true,
+          zIndex: -1
+        }
       }}
-      className="absolute inset-0 -z-10"
     />
   );
 }

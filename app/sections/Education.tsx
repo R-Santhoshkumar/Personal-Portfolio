@@ -1,82 +1,83 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { FaGraduationCap } from "react-icons/fa";
 
 const education = [
+  {
+    title: "M.Tech Integrated CSE",
+    institution: "Bharathidasan University",
+    year: "2020 - 2026",
+    details: "6-year integrated program focusing on advanced software engineering, network security, and modern computing architectures.",
+    status: "Ongoing"
+  },
+  {
+    title: "Higher Secondary Education",
+    institution: "Sri Chaitanya Institute",
+    year: "2019 - 2020",
+    details: "Specialized in Mathematics, Physics, and Chemistry (MPC) with a focus on logical reasoning and technical fundamentals.",
+    status: "Completed"
+  },
   {
     title: "Secondary Education",
     institution: "Kendriya Vidyalaya",
     year: "2017 - 2018",
-    details: "Completed foundational education with a focus on core subjects including Mathematics and Science, laying the groundwork for analytical thinking and problem-solving skills.",
-  },
-  {
-    title: "Higher Secondary Education",
-    institution: "Sri Chaitanya Educational Institute",
-    year: "2019 - 2020",
-    details: "Specialized in Mathematics, Physics, and Chemistry, building a strong base in logical reasoning and technical concepts, which paved the way for pursuing a career in engineering.",
-  },
-  {
-    title: "M.Tech (6yr Integrated) Computer Science and Engineering",
-    institution: "Bharathidasan University",
-    year: "2020 - 2026 (Present)",
-    details:
-      "Currently pursuing a degree in Computer Science Engineering, with continuous engagement in software development, networking, cybersecurity, and real-world technical projects.",
-  },
+    details: "Foundational academic training with a strong emphasis on core scientific and mathematical principles.",
+    status: "Completed"
+  }
 ];
 
-export default function EducationTimeline() {
+export default function Education() {
   return (
-    <section id="education" className="py-20 text-white px-6">
-      <h2 className="text-3xl font-bold text-green-400 text-center mb-16">
-        Education
-      </h2>
-
-      <div className="relative max-w-6xl mx-auto">
-        {/* Vertical Timeline Line */}
-        <div className="absolute left-1/2 top-0 h-full w-1 bg-[#00ff9c]/70 transform -translate-x-1/2 z-0" />
-
-        {/* Timeline Cards */}
-        <div className="space-y-20 relative z-10">
-          {education.map((edu, idx) => {
-            const isLeft = idx % 2 === 0;
-            const animationDirection = isLeft ? -100 : 100;
-
-            return (
-              <motion.div
-                key={idx}
-                initial={{ opacity: 0, x: animationDirection }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.6, delay: idx * 0.3 }}
-                viewport={{ once: true }}
-                className="flex flex-col md:flex-row items-center gap-6 relative"
-              >
-                {/* Dot in center */}
-                <div className="absolute left-1/2 transform -translate-x-1/2 w-5 h-5 bg-green-400 rounded-full border-4 border-black z-20" />
-
-                {/* Spacer (empty div to align card left/right) */}
-                <div
-                  className={`w-full md:w-1/2 ${
-                    isLeft ? "order-1" : "order-2"
-                  }`}
-                />
-
-                {/* Education Card */}
-                <div
-                  className={`w-full md:w-1/2 rounded-xl border border-white/10 bg-white/5 backdrop-blur-md p-6 hover:shadow-2xl transition-all duration-300 ${
-                    isLeft ? "order-2 md:ml-auto" : "order-1 md:mr-auto"
-                  }`}
-                >
-                  <h3 className="text-xl font-semibold text-green-300">
-                    {edu.title}
-                  </h3>
-                  <p className="text-sm text-gray-300">{edu.institution}</p>
-                  <p className="text-sm text-gray-400 mb-2">{edu.year}</p>
-                  <p className="text-gray-200 text-sm">{edu.details}</p>
-                </div>
-              </motion.div>
-            );
-          })}
+    <section id="education" className="py-24 px-4 max-w-7xl mx-auto">
+      <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-4">
+        <div className="space-y-2">
+          <h2 className="text-cyber-green font-mono text-sm tracking-widest uppercase">Academic Path</h2>
+          <h3 className="text-4xl font-bold">Education <span className="text-slate-500">History</span></h3>
         </div>
+      </div>
+
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {education.map((edu, i) => (
+          <motion.div
+            key={i}
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ delay: i * 0.1 }}
+            className="group relative p-8 rounded-3xl border border-white/5 glass-morphism overflow-hidden flex flex-col"
+          >
+            <div className="absolute top-0 right-0 p-6 opacity-5 group-hover:opacity-10 transition-opacity">
+              <FaGraduationCap size={80} />
+            </div>
+
+            <div className="relative z-10 space-y-4 flex-grow">
+              <div className="flex items-start justify-between">
+                <span className="px-3 py-1 bg-cyber-green/10 text-cyber-green text-[10px] font-bold uppercase tracking-widest rounded-full border border-cyber-green/20">
+                  {edu.status}
+                </span>
+                <span className="text-slate-500 font-mono text-sm">{edu.year}</span>
+              </div>
+
+              <h4 className="text-2xl font-bold leading-tight group-hover:text-cyber-green transition-colors">
+                {edu.title}
+              </h4>
+              <p className="text-white/80 font-medium">{edu.institution}</p>
+              <p className="text-slate-400 text-sm leading-relaxed">
+                {edu.details}
+              </p>
+            </div>
+            
+            <div className="mt-8 pt-6 border-t border-white/5 flex items-center justify-between">
+              <div className="flex gap-1">
+                {[1, 2, 3].map(dot => (
+                  <div key={dot} className="w-1.5 h-1.5 rounded-full bg-cyber-green/30" />
+                ))}
+              </div>
+              <FaGraduationCap className="text-slate-700" />
+            </div>
+          </motion.div>
+        ))}
       </div>
     </section>
   );

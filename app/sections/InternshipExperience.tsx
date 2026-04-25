@@ -1,114 +1,127 @@
-// components/InternshipTimeline.tsx
-'use client';
+"use client";
 
-import { motion } from 'framer-motion';
-import {
-  FaShieldAlt,
-  FaServer,
-  FaBug,
-} from 'react-icons/fa';
-import { MdSecurity } from 'react-icons/md';
-import { JSX } from 'react/jsx-runtime';
+import { useRef } from "react";
+import { motion, useScroll, useSpring } from "framer-motion";
+import { FaShieldAlt, FaServer, FaBug, FaCode } from "react-icons/fa";
+import { MdSecurity } from "react-icons/md";
 
-// Define allowed icon types
-type IconTypeKey = 'security' | 'cyber' | 'tech' | 'web';
-
-interface Internship {
-  title: string;
-  company: string;
-  duration: string;
-  iconType: IconTypeKey;
-  description: string;
-}
-
-// Internship data
-const internships: Internship[] = [
+const internships = [
   {
-    title: 'Cybersecurity Intern',
-    company: 'VDart',
-    duration: 'Aug 2025 - Sep 2025',
-    iconType: 'security',
-    description:
-      'I completed my internship at Vdart Academy from August 4th to September 26th, where I gained practical knowledge in Governance, Risk, and Compliance (GRC) and cybersecurity. During this period, I learned about security audits, VAPT, risk assessment, Linux, networking, firewalls, ISO policies, and SOPs. The internship helped me understand how cybersecurity, cryptography, and compliance work together to protect and manage organizational information systems effectively.',
+    title: "Associate - L1 SOC Support Engineer",
+    company: "VDart",
+    duration: "Apr 2026 - Present",
+    icon: <MdSecurity size={24} />,
+    description: "Monitoring and analyzing security events, responding to incidents, and supporting SOC operations to ensure organizational security integrity.",
+    color: "bg-blue-600"
   },
   {
-    title: 'Web Security Intern',
-    company: 'Indian Institute of Information Technology, Kottayam',
-    duration: 'May 2025 - Jul 2025',
-    iconType: 'web',
-    description:
-      'Completed a web security-focused internship at IIITK, gaining hands-on experience in identifying and mitigating vulnerabilities such as SQL injection, XSS, and command injection. Worked with tools like Burp Suite, SQLMap, and OWASP ZAP to analyze and secure web applications.',
+    title: "Cybersecurity Intern",
+    company: "VDart",
+    duration: "Aug 2025 - Sep 2025",
+    icon: <MdSecurity size={24} />,
+    description: "Gained practical knowledge in GRC and cybersecurity, focusing on security audits, VAPT, risk assessment, and ISO policies.",
+    color: "bg-green-500"
   },
   {
-    title: 'Technical Intern',
-    company: 'Bharathidasan University, Tiruchirappalli',
-    duration: 'Jan 2025 - Mar 2025',
-    iconType: 'tech',
-    description:
-      'Completed a technical internship focused on core networking concepts and system troubleshooting. Gained hands-on experience in diagnosing and resolving hardware and software issues while strengthening understanding of network configurations and maintenance.',
+    title: "Web Security Intern",
+    company: "IIIT Kottayam",
+    duration: "May 2025 - Jul 2025",
+    icon: <FaBug size={24} />,
+    description: "Identified and mitigated vulnerabilities like SQLi and XSS using Burp Suite and OWASP ZAP.",
+    color: "bg-red-500"
   },
   {
-    title: 'Cybersecurity Intern',
-    company: 'KGISL',
-    duration: 'Jul 2024 - Jan 2025',
-    iconType: 'cyber',
-    description:
-      'Completed a course-cum-internship in Cybersecurity at KGiSL Micro College with a focus on Cisco Networking, Red Hat Linux, and AWS. Gained hands-on experience in network security, cloud computing, and Linux system administration, building practical skills for real-world cybersecurity challenges.',
+    title: "Technical Intern",
+    company: "Bharathidasan University",
+    duration: "Jan 2025 - Mar 2025",
+    icon: <FaServer size={24} />,
+    description: "Focused on core networking concepts and system troubleshooting, hardware/software diagnostics.",
+    color: "bg-blue-500"
   },
   {
-    title: 'Cybersecurity Intern',
-    company: 'Edu-versity',
-    duration: 'May 2024 - Jun 2024',
-    iconType: 'security',
-    description:
-      'Completed an internship in cybersecurity at Edu-versity Company, covering network security, ethical hacking, threat analysis, and security protocols. Gained hands-on experience with cybersecurity tools and techniques to strengthen skills in securing information systems and mitigating threats.',
+    title: "Cybersecurity Intern",
+    company: "KGiSL",
+    duration: "Jul 2024 - Jan 2025",
+    icon: <FaShieldAlt size={24} />,
+    description: "Hands-on experience in Cisco Networking, Red Hat Linux, and AWS cloud security.",
+    color: "bg-purple-500"
   },
-  
-  
-  
+  {
+    title: "Cybersecurity Intern",
+    company: "Edu-versity",
+    duration: "May 2024 - Jun 2024",
+    icon: <FaCode size={24} />,
+    description: "Covered network security, ethical hacking, and threat analysis protocols.",
+    color: "bg-yellow-500"
+  }
 ];
 
-// Icon mapping
-const iconMapper: Record<IconTypeKey, JSX.Element> = {
-  security: <MdSecurity size={30} />,
-  cyber: <FaShieldAlt size={28} />,
-  tech: <FaServer size={28} />,
-  web: <FaBug size={28} />,
-};
+export default function InternshipExperience() {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start center", "end center"]
+  });
+  const scaleY = useSpring(scrollYProgress, {
+    stiffness: 100,
+    damping: 30,
+    restDelta: 0.001
+  });
 
-// Component
-export default function InternshipTimeline() {
   return (
-    <section id="experience" className="py-20 px-4 max-w-7xl mx-auto flex-col items-center justify-between gap-10]">
-      <h2 className="text-3xl md:text-3xl text-green-400 font-bold text-center mb-16">
-        Experience
-      </h2>
+    <section id="experience" ref={containerRef} className="py-24 px-4 max-w-5xl mx-auto">
+      <div className="space-y-2 mb-16">
+        <h2 className="text-cyber-green font-mono text-sm tracking-widest uppercase text-center">Journey</h2>
+        <h3 className="text-4xl font-bold text-center">Professional <span className="text-slate-500">Experience</span></h3>
+      </div>
 
-      <div className="relative border-l-2 border-green-500 max-w-4xl mx-auto space-y-12">
-        {internships.map((item, index) => (
-          <motion.div
-            key={index}
-            initial={{ opacity: 0, x: -60 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5, delay: index * 0.2 }}
-            viewport={{ once: true }}
-            className="relative pl-8"
-          >
-            {/* Timeline dot */}
-            <div className="absolute left-[-13px] top-1 w-6 h-6 rounded-full bg-green-500 border-4 border-[#0f172a]" />
+      <div className="relative">
+        {/* Static Background Line */}
+        <div className="absolute left-0 md:left-1/2 top-0 bottom-0 w-px bg-white/10" />
+        
+        {/* Animated Connecting Line */}
+        <motion.div 
+          style={{ scaleY, originY: 0 }}
+          className="absolute left-0 md:left-1/2 top-0 bottom-0 w-px bg-cyber-green z-0"
+        />
 
-            {/* Glassmorphism Card */}
-            <div className="border border-white/10 bg-white/5 backdrop-blur-md shadow-lg p-6 rounded-xl shadow-xl hover:bg-white/10 hover:shadow-green-500/30 transition-all duration-300 text-white">
-              <div className="flex items-center gap-3 text-green-300 mb-2">
-                {iconMapper[item.iconType]}
-                <h3 className="text-xl font-semibold">{item.title}</h3>
+        <div className="space-y-12 relative z-10">
+          {internships.map((item, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: index * 0.1 }}
+              className={`flex flex-col md:flex-row items-center gap-8 ${
+                index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
+              }`}
+            >
+              {/* Content Card */}
+              <div className="flex-1 w-full">
+                <div className={`p-6 rounded-3xl glass-morphism border border-white/5 hover:border-cyber-green/30 transition-all group ${
+                  index % 2 === 0 ? "md:text-right" : "md:text-left"
+                }`}>
+                  <span className="text-xs font-mono text-cyber-green mb-1 block">{item.duration}</span>
+                  <h4 className="text-xl font-bold mb-1 group-hover:text-cyber-green transition-colors">{item.title}</h4>
+                  <p className="text-white/80 font-medium mb-3">{item.company}</p>
+                  <p className="text-slate-400 text-sm leading-relaxed">{item.description}</p>
+                </div>
               </div>
-              <p className="text-white font-medium">{item.company}</p>
-              <p className="text-sm text-gray-300 mb-3">{item.duration}</p>
-              <p className="text-sm text-gray-200">{item.description}</p>
-            </div>
-          </motion.div>
-        ))}
+
+              {/* Icon / Center Point */}
+              <div className="relative z-10 flex items-center justify-center">
+                <div className={`w-14 h-14 rounded-full glass-morphism flex items-center justify-center p-2 shadow-2xl border-2 border-white/10 overflow-hidden text-white`}>
+                  {item.icon}
+                </div>
+                <div className="absolute w-2 h-2 rounded-full bg-white md:block hidden" />
+              </div>
+
+              {/* Spacer */}
+              <div className="flex-1 md:block hidden" />
+            </motion.div>
+          ))}
+        </div>
       </div>
     </section>
   );
