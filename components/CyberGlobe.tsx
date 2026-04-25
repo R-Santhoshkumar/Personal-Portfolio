@@ -1,6 +1,10 @@
 "use client";
 
+
 import { useRef } from "react";
+
+import { useRef, useEffect } from "react";
+
 import { Canvas, useFrame } from "@react-three/fiber";
 import { Float, PerspectiveCamera, MeshDistortMaterial, Icosahedron, Cylinder } from "@react-three/drei";
 import * as THREE from "three";
@@ -67,6 +71,18 @@ function DataStream({ position }: { position: [number, number, number] }) {
 }
 
 export default function CyberGlobe() {
+
+  const gridRef = useRef<THREE.GridHelper>(null);
+
+  useEffect(() => {
+    if (gridRef.current) {
+      const material = gridRef.current.material as THREE.LineBasicMaterial;
+      material.transparent = true;
+      material.opacity = 0.05;
+    }
+  }, []);
+
+
   return (
     <div className="w-full h-[400px] md:h-[600px] cursor-grab active:cursor-grabbing">
       <Canvas>
@@ -83,8 +99,11 @@ export default function CyberGlobe() {
         <DataStream position={[2.5, -1, -1]} />
         <DataStream position={[-3, 0, -1]} />
         <DataStream position={[3, 3, -1]} />
-        
+
         <gridHelper args={[40, 20, "#00ff9c", "#020617"]} position={[0, -3.5, 0]} opacity={0.05} />
+
+        <gridHelper ref={gridRef} args={[40, 20, "#00ff9c", "#020617"]} position={[0, -3.5, 0]} />
+
       </Canvas>
     </div>
   );

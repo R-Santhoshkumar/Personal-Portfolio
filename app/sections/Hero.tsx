@@ -1,7 +1,11 @@
 "use client";
 
 import { motion } from "framer-motion";
+
 import { FaTerminal, FaDownload, FaLinkedin, FaGithub } from "react-icons/fa";
+
+import { FaTerminal, FaEnvelope, FaLinkedin, FaGithub } from "react-icons/fa";
+
 import CyberGlobe from "@/components/CyberGlobe";
 
 export default function Hero() {
@@ -36,6 +40,7 @@ export default function Hero() {
               visible: { opacity: 1, y: 0 }
             }}
             className="text-cyber-green font-mono text-sm tracking-widest uppercase block"
+
           >
             &lt; Ready to secure /&gt;
           </motion.span>
@@ -90,6 +95,61 @@ export default function Hero() {
           >
             <FaDownload className="text-sm" />
             Resume
+
+          >
+            &lt; Ready to secure /&gt;
+          </motion.span>
+          
+          <motion.h1 
+            variants={{
+              hidden: { opacity: 0, x: -30 },
+              visible: { opacity: 1, x: 0 }
+            }}
+            className="text-5xl md:text-7xl font-black tracking-tight leading-none pr-4"
+          >
+            SANTHOSH<span className="text-transparent bg-clip-text bg-gradient-to-r from-cyber-green to-cyber-blue">KUMAR</span><br />
+            <span className="text-white">R</span>
+          </motion.h1>
+        </div>
+
+        <motion.p 
+          variants={{
+            hidden: { opacity: 0, y: 20 },
+            visible: { opacity: 1, y: 0 }
+          }}
+          className="text-lg md:text-xl text-slate-400 max-w-xl leading-relaxed"
+        >
+          A dedicated <span className="text-white font-semibold">Associate L1 SOC Support Engineer</span> and 
+          <span className="text-white font-semibold"> Cybersecurity Enthusiast</span> focused on building 
+          secure, scalable, and resilient digital infrastructures.
+        </motion.p>
+
+        <motion.div 
+          variants={{
+            hidden: { opacity: 0, y: 20 },
+            visible: { opacity: 1, y: 0 }
+          }}
+          className="flex flex-wrap gap-4"
+        >
+          <motion.a
+            whileHover={{ scale: 1.05, boxShadow: "0 0 20px rgba(0, 255, 156, 0.3)" }}
+            whileTap={{ scale: 0.95 }}
+            href="#projects"
+            className="px-8 py-4 bg-cyber-green text-black font-bold rounded-xl shadow-lg shadow-cyber-green/20 transition-all flex items-center gap-2"
+          >
+            <FaTerminal className="text-sm" />
+            Explore Projects
+          </motion.a>
+
+          <motion.a
+            whileHover={{ scale: 1.05, backgroundColor: "rgba(255, 255, 255, 0.1)" }}
+            whileTap={{ scale: 0.95 }}
+            href="#contact"
+            className="px-8 py-4 border border-white/10 glass font-bold rounded-xl transition-all flex items-center gap-2"
+          >
+            <FaEnvelope className="text-sm" />
+            Contact Me
+
           </motion.a>
         </motion.div>
 
