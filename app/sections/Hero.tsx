@@ -1,8 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Typewriter } from "react-simple-typewriter";
-import { FaUser, FaDownload } from "react-icons/fa";
+import { FaTerminal, FaEnvelope, FaLinkedin, FaGithub } from "react-icons/fa";
+import CyberGlobe from "@/components/CyberGlobe";
 
 export default function Hero() {
   return (
@@ -16,18 +16,53 @@ export default function Hero() {
 
       {/* Left Content */}
       <motion.div
-        className="space-y-6 w-full md:w-1/2"
-        initial={{ x: -100, opacity: 0 }}
-        animate={{ x: 0, opacity: 1 }}
-        transition={{ duration: 0.8, ease: "easeInOut" }}
+        className="flex-1 space-y-8 z-10"
+        initial="hidden"
+        animate="visible"
+        variants={{
+          hidden: { opacity: 0 },
+          visible: {
+            opacity: 1,
+            transition: {
+              staggerChildren: 0.2,
+            },
+          },
+        }}
       >
-        <h1 className="text-2xl sm:text-3xl md:text-5xl text-[#00ff9c] font-extrabold leading-tight bg-clip-text drop-shadow-[0_2px_2px_rgba(0,255,156,0.4)]">
-          👋 Hello, I'm SANTHOSHKUMAR R
-        </h1>
+        <div className="space-y-2">
+          <motion.span 
+            variants={{
+              hidden: { opacity: 0, y: 20 },
+              visible: { opacity: 1, y: 0 }
+            }}
+            className="text-cyber-green font-mono text-sm tracking-widest uppercase block"
+          >
+            &lt; Ready to secure /&gt;
+          </motion.span>
+          
+          <motion.h1 
+            variants={{
+              hidden: { opacity: 0, x: -30 },
+              visible: { opacity: 1, x: 0 }
+            }}
+            className="text-5xl md:text-7xl font-black tracking-tight leading-none pr-4"
+          >
+            SANTHOSH<span className="text-transparent bg-clip-text bg-gradient-to-r from-cyber-green to-cyber-blue">KUMAR</span><br />
+            <span className="text-white">R</span>
+          </motion.h1>
+        </div>
 
-        <h2 className="text-base sm:text-lg md:text-2xl bg-clip-text text-[#00ff9c]">
-          Cybersecurity Enthusiast 🔐 | Developer 💻
-        </h2>
+        <motion.p 
+          variants={{
+            hidden: { opacity: 0, y: 20 },
+            visible: { opacity: 1, y: 0 }
+          }}
+          className="text-lg md:text-xl text-slate-400 max-w-xl leading-relaxed"
+        >
+          A dedicated <span className="text-white font-semibold">Associate L1 SOC Support Engineer</span> and 
+          <span className="text-white font-semibold"> Cybersecurity Enthusiast</span> focused on building 
+          secure, scalable, and resilient digital infrastructures.
+        </motion.p>
 
         <motion.div 
           variants={{
@@ -49,12 +84,11 @@ export default function Hero() {
           <motion.a
             whileHover={{ scale: 1.05, backgroundColor: "rgba(255, 255, 255, 0.1)" }}
             whileTap={{ scale: 0.95 }}
-            href="/resume.pdf"
-            download
-            className="border border-green-500 text-green-300 px-4 py-2 sm:px-6 sm:py-3 rounded-full hover:bg-green-500 hover:text-black transition shadow-md flex items-center justify-center gap-2 w-full sm:w-auto"
+            href="#contact"
+            className="px-8 py-4 border border-white/10 glass font-bold rounded-xl transition-all flex items-center gap-2"
           >
-            <FaDownload className="w-4 h-4" />
-            Resume CV
+            <FaEnvelope className="text-sm" />
+            Contact Me
           </motion.a>
         </motion.div>
 
